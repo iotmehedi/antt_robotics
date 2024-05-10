@@ -1,6 +1,4 @@
-# interective_cares_task
-# clone time this problem was to some files. that's why pushed.
-# <<<<<<<< HEAD:lib>>>>>
+
 A new Flutter project.
 
 ## Getting Started
