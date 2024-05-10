@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:interective_cares_task/core/utils/consts/app_assets.dart';
 import 'package:interective_cares_task/core/utils/consts/app_colors.dart';
 import 'package:interective_cares_task/core/utils/consts/textStyle.dart';
@@ -16,7 +17,7 @@ import '../../core/routes/router.dart';
 import '../core/common_widgets/others_widget/input_textfield_widget.dart';
 
 class SigninScreen extends ConsumerWidget {
-  const SigninScreen({super.key});
+  SigninScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef widgetRef) {
@@ -116,6 +117,17 @@ class SigninScreen extends ConsumerWidget {
                     // RouteGenerator.pushNamed(context, Routes.dashboard);
                   },
                 ),
+
+                ElevatedButtonWidget(
+                  buttonKeyWord: 'Sign In',
+                  textColor: AppColors.blurDark,
+                  textFontSize: 16.0,
+                  textFontWeight: FontWeight.bold,
+                  buttonWidth: double.infinity,
+                  buttonHeight: 50.0,
+                  callback: () => _handleSignIn(context),
+                ),
+
                 40.ph,
                 RichText(
                   text: TextSpan(
@@ -142,5 +154,32 @@ class SigninScreen extends ConsumerWidget {
         ),
       ),
     );
+  }
+
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+
+  void _handleSignIn(BuildContext context) async {
+    try {
+      final GoogleSignInAccount? googleSignInAccount =
+          await _googleSignIn.signIn();
+      if (googleSignInAccount != null) {
+        // Successfully signed in
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(
+              "Signed in successfully: ${googleSignInAccount.displayName}"),
+        ));
+      } else {
+        // User canceled the sign-in
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text("Sign in canceled"),
+        ));
+      }
+    } catch (error) {
+      print("Error signing in with Google: $error");
+      // Handle sign-in errors
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        content: Text("Error signing in with Google: $error"),
+      ));
+    }
   }
 }

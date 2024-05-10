@@ -79,7 +79,7 @@ class ForgotPasswordScreen extends ConsumerWidget {
                             email: widgetRef.watch(email.notifier).state,
                           );
                       if (!context.mounted) return;
-                      RouteGenerator.pushNamed(context, Routes.dashboard);
+                      // RouteGenerator.pushNamed(context, Routes.dashboard);
                       snackbar(
                           message: "Successfully send email",
                           context: context,

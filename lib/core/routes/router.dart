@@ -64,7 +64,7 @@ class RouteGenerator {
         );
       case Routes.signInScreen:
         return MaterialPageRoute(
-          builder: (context) => const SigninScreen(),
+          builder: (context) => SigninScreen(),
         );
       case Routes.signupScreen:
         return MaterialPageRoute(
