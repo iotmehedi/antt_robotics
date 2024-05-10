@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:interective_cares_task/core/routes/route_name.dart';
-import 'package:interective_cares_task/features/features/course_details_play/course_details_play_tutorial.dart';
 import 'package:interective_cares_task/features/features/signup_page/presentation/signup_page.dart';
 import '../../features/features/forgot_password_screen/forgot_password_screen.dart';
 import '../../features/features/signin_page.dart';

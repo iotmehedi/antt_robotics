@@ -40,13 +40,7 @@ class SigninScreen extends ConsumerWidget {
                     color: Colors.black,
                     fontSize: 20.0,
                     fontWeight: FontWeight.bold),
-                10.ph,
-                globalText(
-                    text:
-                        "By using our services you are agreeing to our terms and\nprivacy Statement",
-                    color: Colors.black,
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.normal),
+
                 60.ph,
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -117,7 +111,7 @@ class SigninScreen extends ConsumerWidget {
                     // RouteGenerator.pushNamed(context, Routes.dashboard);
                   },
                 ),
-10.ph,
+                10.ph,
                 ElevatedButtonWidget(
                   buttonKeyWord: 'Google Sign in',
                   textColor: AppColors.blurDark,
