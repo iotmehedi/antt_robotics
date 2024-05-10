@@ -117,9 +117,9 @@ class SigninScreen extends ConsumerWidget {
                     // RouteGenerator.pushNamed(context, Routes.dashboard);
                   },
                 ),
-
+10.ph,
                 ElevatedButtonWidget(
-                  buttonKeyWord: 'Sign In',
+                  buttonKeyWord: 'Google Sign in',
                   textColor: AppColors.blurDark,
                   textFontSize: 16.0,
                   textFontWeight: FontWeight.bold,

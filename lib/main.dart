@@ -17,7 +17,12 @@ import 'features/features/signup_page/riverpod_provider/provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await init();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+      options: FirebaseOptions(
+          apiKey: "AIzaSyCYFM4LcjKVi16EhELhktsL4VxCMjmPYJ8",
+          appId: "1:921804076386:android:e5bb2de8f575da3627283b",
+          messagingSenderId: "921804076386",
+          projectId: "interact-care-task"));
   runApp(ProviderScope(child: MyApp()));
 }
 
